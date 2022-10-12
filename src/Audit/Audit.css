@@ -2,10 +2,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
-  margin-top: -48px;
-  margin-left: -37%;
-  margin-right: -55%;
+  background-color: #4682B4 !important;
 }
 .navbar-nav {
   float: left;
@@ -13,15 +10,49 @@
   width: 25%;
 }
 .navbar-brand {
-  float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+display: none;
 }
-a.nav-link {
-  margin-right: 20%;
-}
+
 .user-screen {
   width: max-content !important;
+}
+.bodyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.searchBar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 49%;
+}
+.dropdown {
+  width: 49%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+table, td, th {  
+  border: 0.5px solid rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 990px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+th {
+  background-color: #4682B4;
+  color: white;
 }

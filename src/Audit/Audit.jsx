@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
-
+import './Audit.css'
 import { Navbar, Nav } from 'react-bootstrap';
+import AuditTable from './AuditTable';
 class Auditpage extends React.Component {
     componentDidMount() {
         this.props.getUsers();
@@ -25,28 +26,12 @@ class Auditpage extends React.Component {
                         <Nav.Link> <Link to="/login">Logout</Link></Nav.Link>
                     </Nav>
                 </Navbar>
-                <div className="col-md-6 col-md-offset-3">
+                <div className="bodyContent">
 
                     <h1>Hi {user.firstName}!</h1>
                     <p>You're logged in with React!!</p>
-                    <h3>All login audit :</h3>
-                    {users.loading && <em>Loading users...</em>}
-                    {users.error && <span className="text-danger">ERROR: {users.error}</span>}
-                    {users.items &&
-                        <ul className="user-screen">
-                            {users.items.map((user, index) =>
-                                <li key={user.id}>
-                                    {user.id + ' ' + user.role + ' ' + user.createdDate + ' '}
-                                    {user.firstName + ' ' + user.lastName}
-                                    {
-                                        user.deleting ? <em> - Deleting...</em>
-                                            : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
-                                                : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
-                                    }
-                                </li>
-                            )}
-
-                        </ul>
+                    <h3>All login audit :</h3>                    
+                    {users && <AuditTable users={users} />
                     }
                 </div>
             </div>

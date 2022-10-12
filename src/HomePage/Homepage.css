@@ -3,25 +3,28 @@
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  margin-top: -48px;
-  margin-left: -37%;
-  margin-right: -55%;
+  display: flex;
+  border-radius: 0;
 }
 .navbar-nav {
-  float: left;
-  margin: 20px;
-  width: 25%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
 }
 .navbar-brand {
-  float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  display: none;
 }
-a.nav-link {
-  margin-right: 20%;
+
+a {
+  color: white;
 }
 .user-screen {
   width: max-content !important;
+}
+.bodyContainer{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
